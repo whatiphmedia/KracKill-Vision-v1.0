@@ -1,0 +1,41 @@
+OSC READ ME
+
+**Setup:**
+1. Get Open Stage Control from [openstagecontrol.ammd.net](https://openstagecontrol.ammd.net/).
+2. In KracKill$ Vision, click **OSC** in the header, then download **Bridge file** and **Controller layout**.
+3. In Open Stage Control's launcher, set **custom-module** to the bridge file and **load** to the layout, then press **Start**.
+4. It shows a 6-character pairing code, both in its log and in the layout's "Pairing code" box. Type it into the OSC panel and press **Connect**. A dot appears on the OSC button while connected.
+
+**What's mapped:** 1,217 addresses covering every variable, every Krack'd FX on/off switch and parameter, all Krack'd Vision settings, and the colour mode, band colours and palette, for each layer. Some examples:
+- `/kk/a/var/waveH`
+- `/kk/b/fx/bloom/on`
+- `/kk/b/fx/bloom/intensity`
+- `/kk/a/vision/geo`
+- `/kk/c/color/band/2/rgb`
+- `/kk/palette/1`
+
+**Address list** downloads all of them with their types and ranges.
+
+**Options:** values can be sent in real units or 0–1. With **Feedback: On**, changes you make in the app update the controller's faders.
+
+**Tested in the browser:** controller moves change the app, app changes flow back to the controller, and out-of-range values are clamped to their limits.
+
+**Security:**
+- The bridge listens only on your own computer, and the app will only connect to your own computer.
+- Pairing must happen within 30 seconds, and a wrong code is refused.
+- Other websites can't connect, and malformed data is dropped.
+- Only the published addresses are accepted, with numbers or colours only, and the message rate is limited.
+- Nothing received can run code or touch files.
+
+I tested all of these defences against the bridge directly.
+
+**Not tested:**
+- **The layout file** was built to Open Stage Control's file format, but I couldn't load it in the real app. If anything looks off when it opens, tell me what you see.
+- **Bridge loading:** I checked the bridge against Open Stage Control's documented module setup, but not inside the real app. If it doesn't load, paste me the message from Open Stage Control's log.
+
+**Phones and tablets:** they connect to Open Stage Control's own web page, not to KracKill$ Vision, so the bridge itself never leaves your computer.
+
+Sources:
+- [Open Stage Control custom module docs](https://openstagecontrol.ammd.net/docs/custom-module/custom-module/)
+- [grandMA3 manual: Open Stage Control setup](https://help.malighting.com/grandMA3/2.5/HTML/osc_open_stage_control.html)
+- [Example Open Stage Control layout (elk-audio)](https://github.com/elk-audio/elk-examples/blob/master/mda-jx10-vst3/mda_jx10_vst3_open_stage_control_gui.json)
