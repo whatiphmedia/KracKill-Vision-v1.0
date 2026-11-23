@@ -1,0 +1,575 @@
+[
+ {
+  "form": "Ring",
+  "style": "dots and lines",
+  "fx": [
+   "Night vision"
+  ],
+  "kv": "",
+  "file": "krack_01.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_20.png"
+ },
+ {
+  "form": "Sphere",
+  "style": "dots",
+  "fx": [
+   "VHS",
+   "Pattern grid"
+  ],
+  "kv": "",
+  "file": "krack_02.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_06.png"
+ },
+ {
+  "form": "Tunnel",
+  "style": "dots",
+  "fx": [
+   "Fish eye"
+  ],
+  "kv": "",
+  "file": "krack_03.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_14.png"
+ },
+ {
+  "form": "Sphere",
+  "style": "dots and lines",
+  "fx": [
+   "Dome projection",
+   "Pixel art"
+  ],
+  "kv": "",
+  "file": "krack_04.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_12.png"
+ },
+ {
+  "form": "Spiral",
+  "style": "dots",
+  "fx": [
+   "Chromatic aberration",
+   "Halftone",
+   "Micrographics",
+   "Thermal vision"
+  ],
+  "kv": "Pinwheel \u00b7 Plasma \u00b7 Sphere",
+  "file": "krack_05.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_36.png"
+ },
+ {
+  "form": "Volume",
+  "style": "dots and lines",
+  "fx": [
+   "Toonify",
+   "Contour",
+   "Resonance"
+  ],
+  "kv": "",
+  "file": "krack_06.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_49.png"
+ },
+ {
+  "form": "Ring",
+  "style": "dots and lines",
+  "fx": [
+   "VHS",
+   "Swirl"
+  ],
+  "kv": "",
+  "file": "krack_07.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_32.png"
+ },
+ {
+  "form": "Volume",
+  "style": "dots",
+  "fx": [
+   "Micrographics",
+   "Slit-scan",
+   "Pixel sort",
+   "Displacement map"
+  ],
+  "kv": "",
+  "file": "krack_08.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_34.png"
+ },
+ {
+  "form": "Ring",
+  "style": "dots",
+  "fx": [
+   "Displacement map"
+  ],
+  "kv": "",
+  "file": "krack_09.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_17.png"
+ },
+ {
+  "form": "Sphere",
+  "style": "dots and lines",
+  "fx": [
+   "Slit-scan",
+   "Reeded glass"
+  ],
+  "kv": "",
+  "file": "krack_10.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_16.png"
+ },
+ {
+  "form": "Ring",
+  "style": "dots",
+  "fx": [
+   "Hue shift",
+   "Sharpen",
+   "Posterization"
+  ],
+  "kv": "",
+  "file": "krack_11.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_45.png"
+ },
+ {
+  "form": "Spiral",
+  "style": "dots",
+  "fx": [
+   "Tilt-shift",
+   "Barrel distortion",
+   "Resonance"
+  ],
+  "kv": "",
+  "file": "krack_12.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_12.png"
+ },
+ {
+  "form": "Tunnel",
+  "style": "dots",
+  "fx": [
+   "Grid"
+  ],
+  "kv": "",
+  "file": "krack_13.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_45.png"
+ },
+ {
+  "form": "Ring",
+  "style": "dots and lines",
+  "fx": [
+   "Dream vision",
+   "Barrel distortion",
+   "Hue shift",
+   "Fish eye"
+  ],
+  "kv": "",
+  "file": "krack_14.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_59.png"
+ },
+ {
+  "form": "Sphere",
+  "style": "dots and lines",
+  "fx": [
+   "Pixel art",
+   "Dream vision",
+   "Posterization"
+  ],
+  "kv": "",
+  "file": "krack_15.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_19.png"
+ },
+ {
+  "form": "Volume",
+  "style": "lines",
+  "fx": [
+   "Metablobs",
+   "Crosshatching",
+   "Adaptive pixelate"
+  ],
+  "kv": "",
+  "file": "krack_16.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_47.png"
+ },
+ {
+  "form": "Ring",
+  "style": "dots and lines",
+  "fx": [
+   "Mosaic"
+  ],
+  "kv": "",
+  "file": "krack_17.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_32.png"
+ },
+ {
+  "form": "Plane",
+  "style": "dots",
+  "fx": [
+   "Grid",
+   "Datamosh",
+   "Ripple"
+  ],
+  "kv": "",
+  "file": "krack_18.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_43.png"
+ },
+ {
+  "form": "Sphere",
+  "style": "lines",
+  "fx": [
+   "Fish eye",
+   "Night vision",
+   "Edge warp"
+  ],
+  "kv": "",
+  "file": "krack_19.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_37.png"
+ },
+ {
+  "form": "Ring",
+  "style": "dots",
+  "fx": [
+   "Micrographics",
+   "VHS"
+  ],
+  "kv": "",
+  "file": "krack_20.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_56.png"
+ },
+ {
+  "form": "Sphere",
+  "style": "dots and lines",
+  "fx": [
+   "Dome projection",
+   "Edge warp",
+   "Dither",
+   "Pixel art"
+  ],
+  "kv": "",
+  "file": "krack_21.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_60.png"
+ },
+ {
+  "form": "Volume",
+  "style": "dots",
+  "fx": [
+   "Swirl",
+   "Sharpen"
+  ],
+  "kv": "",
+  "file": "krack_22.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_21.png"
+ },
+ {
+  "form": "Ring",
+  "style": "dots",
+  "fx": [
+   "Chromatic aberration",
+   "Directional blur"
+  ],
+  "kv": "",
+  "file": "krack_23.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_59.png"
+ },
+ {
+  "form": "Plane",
+  "style": "dots and lines",
+  "fx": [
+   "Barrel distortion",
+   "Toonify",
+   "Tilt-shift",
+   "Metablobs"
+  ],
+  "kv": "",
+  "file": "krack_24.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_60.png"
+ },
+ {
+  "form": "Sphere",
+  "style": "dots",
+  "fx": [
+   "Dome projection",
+   "Swirl"
+  ],
+  "kv": "",
+  "file": "krack_25.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_42.png"
+ },
+ {
+  "form": "Spiral",
+  "style": "dots and lines",
+  "fx": [
+   "Gradient map"
+  ],
+  "kv": "",
+  "file": "krack_26.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_32.png"
+ },
+ {
+  "form": "Sphere",
+  "style": "dots and lines",
+  "fx": [
+   "Displacement map",
+   "Pixelation",
+   "Halftone",
+   "Barrel distortion"
+  ],
+  "kv": "",
+  "file": "krack_27.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_50.png"
+ },
+ {
+  "form": "Ring",
+  "style": "dots",
+  "fx": [
+   "CRT monitor",
+   "Contour"
+  ],
+  "kv": "",
+  "file": "krack_28.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_33.png"
+ },
+ {
+  "form": "Sphere",
+  "style": "dots",
+  "fx": [
+   "Night vision",
+   "Posterization",
+   "CRT monitor"
+  ],
+  "kv": "",
+  "file": "krack_29.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_03.png"
+ },
+ {
+  "form": "Ring",
+  "style": "dots",
+  "fx": [
+   "Paper",
+   "Metablobs"
+  ],
+  "kv": "",
+  "file": "krack_30.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_25.png"
+ },
+ {
+  "form": "Sphere",
+  "style": "dots",
+  "fx": [
+   "Paper",
+   "Chromatic aberration"
+  ],
+  "kv": "",
+  "file": "krack_31.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_02.png"
+ },
+ {
+  "form": "Volume",
+  "style": "dots and lines",
+  "fx": [
+   "CRT monitor",
+   "Metablobs"
+  ],
+  "kv": "",
+  "file": "krack_32.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_15.png"
+ },
+ {
+  "form": "Tunnel",
+  "style": "dots",
+  "fx": [
+   "Halftone",
+   "Sharpen",
+   "Dome projection"
+  ],
+  "kv": "",
+  "file": "krack_33.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_23.png"
+ },
+ {
+  "form": "Volume",
+  "style": "dots",
+  "fx": [
+   "Pixelation"
+  ],
+  "kv": "",
+  "file": "krack_34.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_08.png"
+ },
+ {
+  "form": "Spiral",
+  "style": "dots",
+  "fx": [
+   "Pattern grid",
+   "Bouncing text",
+   "Riso print",
+   "Toonify"
+  ],
+  "kv": "",
+  "file": "krack_35.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_02.png"
+ },
+ {
+  "form": "Volume",
+  "style": "dots",
+  "fx": [
+   "Reeded glass",
+   "Displacement map"
+  ],
+  "kv": "",
+  "file": "krack_36.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_42.png"
+ },
+ {
+  "form": "Spiral",
+  "style": "dots",
+  "fx": [
+   "Ripple",
+   "Lens circle"
+  ],
+  "kv": "",
+  "file": "krack_37.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_20.png"
+ },
+ {
+  "form": "Volume",
+  "style": "dots",
+  "fx": [
+   "Curves"
+  ],
+  "kv": "",
+  "file": "krack_38.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_03.png"
+ },
+ {
+  "form": "Tunnel",
+  "style": "dots and lines",
+  "fx": [
+   "Paper",
+   "Swirl"
+  ],
+  "kv": "",
+  "file": "krack_39.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_49.png"
+ },
+ {
+  "form": "Volume",
+  "style": "dots",
+  "fx": [
+   "Edge detect (Frei-Chen)",
+   "Cross stitching"
+  ],
+  "kv": "",
+  "file": "krack_40.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_48.png"
+ },
+ {
+  "form": "Tunnel",
+  "style": "lines",
+  "fx": [
+   "Slit-scan",
+   "Tilt-shift"
+  ],
+  "kv": "",
+  "file": "krack_41.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_05.png"
+ },
+ {
+  "form": "Volume",
+  "style": "dots and lines",
+  "fx": [
+   "Sharpen",
+   "Metablobs",
+   "Dream vision"
+  ],
+  "kv": "",
+  "file": "krack_42.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_08.png"
+ },
+ {
+  "form": "Spiral",
+  "style": "dots and lines",
+  "fx": [
+   "Swirl",
+   "Black & white",
+   "Fish eye",
+   "Slit-scan"
+  ],
+  "kv": "",
+  "file": "krack_43.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_26.png"
+ },
+ {
+  "form": "Tunnel",
+  "style": "dots",
+  "fx": [
+   "Pattern grid",
+   "Edge warp",
+   "Edge detect (Frei-Chen)"
+  ],
+  "kv": "",
+  "file": "krack_44.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_13.png"
+ },
+ {
+  "form": "Spiral",
+  "style": "dots and lines",
+  "fx": [
+   "Hue shift"
+  ],
+  "kv": "",
+  "file": "krack_45.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_24.png"
+ },
+ {
+  "form": "Plane",
+  "style": "dots",
+  "fx": [
+   "Fish eye",
+   "Metablobs",
+   "Curves",
+   "Lens circle"
+  ],
+  "kv": "",
+  "file": "krack_46.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_52.png"
+ },
+ {
+  "form": "Spiral",
+  "style": "dots and lines",
+  "fx": [
+   "Paper",
+   "Micrographics",
+   "Contour"
+  ],
+  "kv": "",
+  "file": "krack_47.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/k_krack_55.png"
+ },
+ {
+  "form": "Plane",
+  "style": "dots",
+  "fx": [
+   "Hue shift",
+   "Swirl"
+  ],
+  "kv": "",
+  "file": "krack_48.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_22.png"
+ },
+ {
+  "form": "Spiral",
+  "style": "dots and lines",
+  "fx": [
+   "Metablobs",
+   "Sphere lens"
+  ],
+  "kv": "",
+  "file": "krack_49.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/g_krack_41.png"
+ },
+ {
+  "form": "Helix",
+  "style": "dots",
+  "fx": [
+   "Thermal vision",
+   "Night vision",
+   "NTSC",
+   "Ripple"
+  ],
+  "kv": "",
+  "file": "krack_50.png",
+  "src": "/tmp/claude-0/-home-claude/1b8525e3-c5a2-5af2-a518-a11f79e10462/scratchpad/cand/h_krack_19.png"
+ }
+]
