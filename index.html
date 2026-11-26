@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'wasm-unsafe-eval' blob: data:; worker-src blob:; connect-src ws://127.0.0.1:* ws://localhost:* https://cdn.jsdelivr.net/npm/onnxruntime-web@1.31.1/dist/ 'self' https://raw.githubusercontent.com/whatiphmedia/KracKill-Vision-v1.0/ https://huggingface.co/Best-Practice/spleeter-4stems-onnx/ https://huggingface.co/onnx-community/whisper-base_timestamped/ https://*.huggingface.co https://*.hf.co https://en.wikipedia.org/w/api.php blob: data:; img-src data: blob:; media-src blob: data:; style-src 'unsafe-inline'; font-src data: blob:; frame-src 'self' blob:; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
-<title>KracKill$ Vision v1.0</title>
+<title>KracKill$ Vision v1.0.3</title>
 
 <style>
 /* fonts embedded from @fontsource 5.2.7 (SIL Open Font License 1.1): Rajdhani by Indian Type Foundry, Share Tech Mono by Carrois Type Design */
@@ -163,6 +163,7 @@ html.still .val,html.still .vale{transition:none}
 .ck{display:flex;align-items:center;gap:.5em;flex:none}
 #toast{position:fixed;left:50%;bottom:18px;transform:translate(-50%,30px);opacity:0;pointer-events:none;background:var(--ac);color:var(--ink);padding:.7em 1.2em;font:600 14px Rajdhani,sans-serif;text-transform:uppercase;letter-spacing:.08em;transition:.25s;z-index:99;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
 #toast.show{opacity:1;transform:translate(-50%,0)}
+#exv{position:absolute;inset:0;z-index:40;background:#000;display:flex;flex-direction:column}#exv main{flex:1;min-height:0;display:grid;place-items:center;overflow:hidden}#exv canvas{display:block;border:1px solid var(--ln);background:#000}#exv .exvb{display:flex;align-items:center;gap:.4em;padding:.4em;flex-wrap:wrap;background:var(--pn);border-top:1px solid var(--ln);font-size:.8em;text-transform:uppercase;letter-spacing:.05em}#exv .bar{flex:1 0 100%;height:6px;border:1px solid var(--ln)}#exv .bar i{display:block;height:100%;width:0;background:var(--ac)}#exv [data-k=msg]{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#exv button{padding:.45em .8em}#exv [data-k=go]{background:var(--ac);color:var(--ink);border-color:var(--ac)}#exv [data-k=go]:disabled{opacity:.4}
 #exo{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.85);display:grid;place-items:center}
 #exo iframe{width:min(1100px,94vw);height:min(680px,90vh);border:1px solid var(--ln);background:#050505}
 .pg{display:flex;align-items:center;gap:3px;flex:none}.pg small{color:var(--mu);font-size:.8em;margin-right:.3em;text-transform:uppercase}
@@ -227,7 +228,7 @@ var oc=c.transferControlToOffscreen();w.postMessage({cv:oc,W:W,H:H,d:d,D:m.D,col
 /* the flight starts with the page's first frame on screen, not before it */requestAnimationFrame(function(){w.postMessage({go:1});m.t0=Date.now()});
 if(m.css){var st=document.createElement('style');st.textContent=m.css;document.head.appendChild(st)}}catch(e){if(window.KK_RL)KK_RL.late=1}})();</script>
 <div id="app">
- <header id="hd"><span id="lgw"><span id="logo" role="img" aria-label="KracKill$ logo"></span></span><b>KracKill$ Vision v1.0</b><span id="status">Demo signal playing</span>
+ <header id="hd"><span id="lgw"><span id="logo" role="img" aria-label="KracKill$ logo"></span></span><b>KracKill$ Vision v1.0.3</b><span id="status">Demo signal playing</span>
   <button id="bCache" aria-expanded="false" aria-controls="pcache" title="Preset manager: save, name and recall presets, share them as codes, and export or import the whole set as a file">Preset manager</button><button id="bOsc" aria-expanded="false" aria-controls="oscp" title="OSC control: map every variable, Krack’d FX, Krack’d Vision and colour setting to an outside controller (free Open Stage Control bridge)">OSC</button><button id="bFresh" title="Re-launch: start over as on a first visit (clears every setting saved in this browser and reloads; downloaded stem models are kept)">Re-launch</button><button id="bLog" title="Download a debug log (errors, events, your setup and settings) to share when something goes wrong">Debug log</button><button id="bFull">Fullscreen</button></header>
 <div id="oscp" role="dialog" aria-label="OSC control" hidden><div class="pch"><b>OSC control</b><span id="oscSt">Not connected</span><button id="oscX" aria-label="Close OSC panel">×</button></div><div class="row"><input id="oscUrl" type="text" value="ws://127.0.0.1:8090" aria-label="Bridge address (this computer only)" spellcheck="false"><input id="oscCode" type="text" placeholder="Pairing code" maxlength="6" aria-label="Pairing code" spellcheck="false" autocomplete="off"><button id="oscGo">Connect</button></div><div class="row"><label class="ck">Values <select id="oscNorm" aria-label="OSC value range"><option value="0">Real units</option><option value="1">0 – 1</option></select></label><button id="oscFb" class="on" aria-pressed="true" title="Send changes made here back to the controller, so its faders follow">Feedback: On</button></div><div class="row"><button id="oscBr" title="The bridge: a custom module for Open Stage Control">Bridge file</button><button id="oscLay" title="A ready-made Open Stage Control layout with a control for every address">Controller layout</button><button id="oscCsv" title="Every address with its type and range (CSV)">Address list</button></div><div class="hint">1 · Get Open Stage Control (free): openstagecontrol.ammd.net. 2 · In its launcher set <b>custom-module</b> to the bridge file and <b>load</b> to the controller layout, then Start. 3 · Type the pairing code it shows here and Connect. The bridge only works on this computer; phones and tablets can use Open Stage Control’s own page. Addresses look like /kk/a/var/waveH, /kk/b/fx/bloom/on, /kk/a/vision/geo.</div></div>
 <div id="pcache" role="dialog" aria-label="Preset manager" hidden><div class="pch"><b>Preset manager</b><span id="pcInfo"></span><button id="pcX" aria-label="Close preset cache">×</button></div><div class="row"><input id="pcName" type="text" placeholder="Name (optional)" aria-label="Name for the new preset" maxlength="60"><button id="pcAdd">Add current</button></div><div id="pcList" role="list"></div><div class="pch"><b>Recent Release the krack</b><span>last 20</span></div><div id="krkList" role="list"></div><div class="row"><input id="code" type="text" placeholder="Paste a preset code" aria-label="Preset code" spellcheck="false"><button id="pcLoad" title="Apply the pasted code">Load code</button><button id="pcCopy" title="Put the current state in the box as a code and copy it">Copy current</button></div><div class="row"><button id="pcExp">Export cache</button><button id="pcImp">Import cache…</button><button id="pcClr">Clear</button><input id="pcFile" type="file" accept=".json,application/json" hidden></div><div class="hint" id="pcHint"></div></div>
@@ -291,7 +292,7 @@ const dlStr=a=>a.map(x=>x instanceof Error?(x.stack||x.message):x&&typeof x==='o
 addEventListener('error',e=>{if(e.target&&e.target!==window&&e.target.tagName){dlog('error','could not load '+e.target.tagName.toLowerCase());return}dlog('error',(e.message||'error')+(e.lineno?' (line '+e.lineno+':'+e.colno+')':'')+(e.error&&e.error.stack?'\n'+e.error.stack:''))},true);
 addEventListener('unhandledrejection',e=>dlog('reject',dlStr([e.reason])));
 addEventListener('securitypolicyviolation',e=>dlog('blocked',e.violatedDirective+' · '+(e.blockedURI||'inline')));
-dlog('start','KracKill$ Vision v1.0');addEventListener('visibilitychange',()=>dlog('tab',document.hidden?'hidden (drawing pauses while the tab is in the background)':'visible'));
+dlog('start','KracKill$ Vision v1.0.3');addEventListener('visibilitychange',()=>dlog('tab',document.hidden?'hidden (drawing pauses while the tab is in the background)':'visible'));
 {const st=document.getElementById('status');if(st)new MutationObserver(()=>{const t=st.textContent,k=t.replace(/ · \d+( min \d+)? s$/,'').replace(/ · about [^·]*/,''),now=Date.now();if(k!==dlLastSt&&!(DLSEEN.get(k)>now-6e4)){dlLastSt=k;DLSEEN.set(k,now);if(DLSEEN.size>500)DLSEEN.clear();dlog('status',t)}}).observe(st,{childList:true,characterData:true,subtree:true})}
 (function f(){dlF++;requestAnimationFrame(f)})();setInterval(()=>{dlog('perf',(dlF/30).toFixed(1)+' fps'+(performance.memory?' · JS memory '+Math.round(performance.memory.usedJSHeapSize/1048576)+' MB':''));dlF=0},30000);
 if(!window.THREE){const d=document.createElement('div');d.setAttribute('role','alert');d.setAttribute('style','position:fixed;inset:0;z-index:999;display:grid;place-items:center;padding:2em;background:#050505;color:#f2f2f2;font:15px/1.5 monospace;text-align:center');
@@ -1526,7 +1527,7 @@ function oscOpen(on){const p=$('oscp'),b=$('bOsc');if(on){p.style.top=Math.max(8
 
 // debug log download: environment, capabilities, current settings, then every logged event
 async function dlReport(){const L=[],A=(k,v)=>L.push(k.padEnd(22)+v),d=new Date(),yn=b=>b?'yes':'no';
- L.push('KracKill$ Vision v1.0 · debug log','created '+d.toString(),'');L.push('== Environment');
+ L.push('KracKill$ Vision v1.0.3 · debug log','created '+d.toString(),'');L.push('== Environment');
  A('Browser',navigator.userAgent);A('Platform',(navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform||'?');A('Page opened from',location.protocol==='file:'?'a local file':location.protocol+'//'+location.host);
  A('Screen',screen.width+'×'+screen.height+' @'+(devicePixelRatio||1)+'x · window '+innerWidth+'×'+innerHeight);A('CPU threads',navigator.hardwareConcurrency||'?');A('Memory (approx GB)',navigator.deviceMemory||'?');
  A('Reduced motion',RM.matches?'system asks for it ('+(S.ui.mo?'Always animate':'Follow system')+')':'no');
@@ -1772,9 +1773,11 @@ void main(){ivec2 f=ivec2(gl_FragCoord.xy);int w=Z.x,h=Z.y,hh=h/2;vec4 r=vec4(0.
    gl.readPixels(0,0,TW,2*h,gl.RGBA,gl.UNSIGNED_BYTE,buf);const st=TW*4;LY0=[{offset:0,stride:st},{offset:st*h,stride:st},{offset:st*(h+h/2),stride:st}]},
   vf(ts,dur){return new VideoFrame(buf,{format:'I420',codedWidth:W,codedHeight:H,timestamp:ts,duration:dur,layout:LY0,colorSpace:(()=>{const c=csTag();return{primaries:c.p,transfer:c.t,matrix:c.m,fullRange:false}})()})},
   free(){try{gl.getExtension('WEBGL_lose_context').loseContext()}catch(e){}}}}
-async function h264Cfg(w,h,fps){if(!window.VideoEncoder||!window.VideoFrame)return null;const mb=Math.ceil(w/16)*Math.ceil(h/16),
-  lv=([[0x28,8192,245760],[0x2a,8704,522240],[0x32,22080,589824],[0x33,36864,983040],[0x34,36864,2073600]].find(l=>mb<=l[1]&&mb*fps<=l[2])||[0x34])[0].toString(16),bitrate=Math.round(clamp(w*h*fps*.5,12e6,1.6e8));
- for(const p of['6400','4d00','4200'])for(const x of[{latencyMode:'quality',bitrateMode:'quantizer'},{latencyMode:'quality',bitrateMode:'variable'},{}]){const c=Object.assign({codec:'avc1.'+p+lv,width:w,height:h,bitrate,framerate:fps,avc:{format:'avc'}},x);
+// touch-only devices (phones, tablets): no separate windows, lighter encoding
+const MOBX=()=>matchMedia('(pointer:coarse)').matches&&!matchMedia('(any-pointer:fine)').matches;
+async function h264Cfg(w,h,fps){const mob=MOBX();if(!window.VideoEncoder||!window.VideoFrame)return null;const mb=Math.ceil(w/16)*Math.ceil(h/16),
+  lv=([[0x28,8192,245760],[0x2a,8704,522240],[0x32,22080,589824],[0x33,36864,983040],[0x34,36864,2073600]].find(l=>mb<=l[1]&&mb*fps<=l[2])||[0x34])[0].toString(16),bitrate=Math.round(mob?clamp(w*h*fps*.3,8e6,3e7):clamp(w*h*fps*.5,12e6,1.6e8));
+ for(const p of['6400','4d00','4200'])for(const x of(mob?[]:[{latencyMode:'quality',bitrateMode:'quantizer'}]).concat([{latencyMode:'quality',bitrateMode:'variable'},{}])){const c=Object.assign({codec:'avc1.'+p+lv,width:w,height:h,bitrate,framerate:fps,avc:{format:'avc'}},x);
   try{if((await VideoEncoder.isConfigSupported(c)).supported)return c}catch(e){}}return null}
 async function aacCfg(rate){if(!window.AudioEncoder||!window.AudioData)return null;for(const sr of[rate,48000,44100].filter((v,i,a)=>a.indexOf(v)===i))for(const br of[192000,160000,128000,96000]){const c={codec:'mp4a.40.2',sampleRate:sr,numberOfChannels:2,bitrate:br};try{if((await AudioEncoder.isConfigSupported(c)).supported)return c}catch(e){}}return null}
 async function opusCfg(){if(!window.AudioEncoder||!window.AudioData)return null;for(const br of[192000,160000,128000]){const c={codec:'opus',sampleRate:48000,numberOfChannels:2,bitrate:br};try{if((await AudioEncoder.isConfigSupported(c)).supported)return c}catch(e){}}return null}
@@ -1806,7 +1809,13 @@ function pcmWav(a){const n=a.pcm.length/2,ab=new ArrayBuffer(44+n*4),v=new DataV
  s('RIFF');u32(36+n*4);s('WAVE');s('fmt ');u32(16);u16(1);u16(2);u32(a.rate);u32(a.rate*4);u16(4);u16(16);s('data');u32(n*4);new Int16Array(ab,44).set(a.pcm);return new Blob([ab],{type:'audio/wav'})}
 function wcEmit(r){const ts=Math.round(r.n*1e6/r.fps),du=Math.round((r.n+1)*1e6/r.fps)-ts,f=r.pk?r.pk.vf(ts,du):new VideoFrame(ec,{timestamp:ts,duration:du});r.ve.encode(f,r.qm?{keyFrame:r.n%r.fps===0,avc:{quantizer:r.qm}}:{keyFrame:r.n%r.fps===0});f.close();r.n++}
 let EW=null,REC=null,busy=false;
-function openEW(){if(EW)return EW;let w=null;try{w=window.open('','wlExport','popup=yes,width=1100,height=680')}catch(e){}
+function openEWin(){const vz=$('vz'),o=mk('div');o.id='exv';
+ o.innerHTML='<main><canvas width="16" height="9"></canvas></main><div class="exvb"><div class="bar"><i data-k="pb"></i></div><span data-k="msg">Export framing</span><button data-k="go" type="button">Start export</button><button data-k="cl" type="button">Close</button></div>';vz.appendChild(o);
+ const q=k=>o.querySelector('[data-k="'+k+'"]');EW={doc:{getElementById:q},w:null,inl:1,kill:()=>o.remove(),pv:o.querySelector('canvas'),main:o.querySelector('main')};
+ q('go').onclick=startExport;q('cl').onclick=closeEW;updInfo();try{vz.scrollIntoView({block:'nearest',behavior:'smooth'})}catch(e){}return EW}
+// keep the screen on while rendering (a sleeping screen stops the frame loop too)
+let EWL=null;const wlOn=async()=>{try{EWL=await navigator.wakeLock.request('screen')}catch(e){}},wlOff=()=>{try{if(EWL)EWL.release()}catch(e){}EWL=null};
+function openEW(){if(EW)return EW;if(MOBX())return openEWin();let w=null;try{w=window.open('','wlExport','popup=yes,width=1100,height=680')}catch(e){}
  let doc,kill;if(w&&w.document){doc=w.document;kill=()=>{try{w.close()}catch(e){}}}
  else{w=null;const o=mk('div');o.id='exo';const f=mk('iframe');o.appendChild(f);document.body.appendChild(o);doc=f.contentDocument;kill=()=>o.remove()}
  doc.open();doc.write(EWH());doc.close();EW={doc,w,kill,pv:doc.getElementById('pv'),main:doc.querySelector('main')};
@@ -1835,7 +1844,7 @@ async function startExport(){if(REC||busy)return;WKU.clear();if(E.fmt==='webp'&&
   else{const st=ec.captureStream(E.fps);if(mode==='file'&&actx&&outG){try{r.dst=actx.createMediaStreamDestination();outG.connect(r.dst);r.dst.stream.getAudioTracks().forEach(t=>st.addTrack(t))}catch(e){}}
    r.mr=new MediaRecorder(st,{...(mime?{mimeType:mime}:{}),videoBitsPerSecond:clamp(w*h*E.fps*.35,1e7,1.2e8)});r.mr.ondataavailable=e=>{if(e.data.size)r.chunks.push(e.data)};r.mr.start(250)}
   if(!vcfg&&(E.fmt==='mp4'||E.fmt==='mov')&&ext==='webm')toast(E.fmt.toUpperCase()+' isn’t supported in this browser. Recording as WebM.');
-  REC=r;const b=EW.doc.getElementById('go');if(b)b.disabled=true;setMsg('Rendering visualizer only…')}
+  REC=r;wlOn();const b=EW.doc.getElementById('go');if(b)b.disabled=true;setMsg('Rendering visualizer only…')}
  catch(e){toast('Export failed: '+e.message);closeEW()}busy=false}
 function exportStep(now){if(REC){const r=REC,el=now-r.t0;if(r.fin)return;
   if(r.wc){passAll(R2,'exp',r.w,r.h,1,true);if(lastBeat!==r.lb){if(r.lb!==undefined&&r.beats.length<5000)r.beats.push(el/1000);r.lb=lastBeat}const due=el>=r.dur?r.total:Math.min(r.total,Math.floor(el*r.fps/1000)+1);
@@ -1883,8 +1892,8 @@ function fcpxml(o){const X=v=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;
   '<sequence format="r1" duration="'+D+'" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="'+ar+'">\n<spine>\n<asset-clip ref="r2" offset="0s" name="'+X(o.name)+'" duration="'+D+'" format="r1" tcFormat="NDF">\n'+
   conn+mk+(mk?'\n':'')+'</asset-clip>\n</spine>\n</sequence>\n</project>\n</event>\n</library>\n</fcpxml>\n'}
 function dlBlob(b,n){const a=mk('a');a.href=URL.createObjectURL(b);a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),9e3)}
-function endExport(ok,msg){REC=null;setMsg(ok?'Export successful':'Export failed');setBar(ok?100:0);const k=EW&&EW.kill;EW=null;setTimeout(()=>{if(k)k();window.focus();setBar(0);toast(ok?'Export successful — '+msg:'Export failed — '+msg)},ok?700:0)}
-function cancelExport(m){const r=REC;REC=null;try{if(r&&r.mr&&r.mr.state!=='inactive')r.mr.stop()}catch(e){}if(r&&r.ve)try{r.ve.close()}catch(e){}if(r&&r.pk)r.pk.free();if(r&&r.dst)try{outG.disconnect(r.dst)}catch(e){}setBar(0);toast(m)}
+function endExport(ok,msg){REC=null;wlOff();setMsg(ok?'Export successful':'Export failed');setBar(ok?100:0);const k=EW&&EW.kill;EW=null;setTimeout(()=>{if(k)k();window.focus();setBar(0);toast(ok?'Export successful — '+msg:'Export failed — '+msg)},ok?700:0)}
+function cancelExport(m){const r=REC;REC=null;wlOff();try{if(r&&r.mr&&r.mr.state!=='inactive')r.mr.stop()}catch(e){}if(r&&r.ve)try{r.ve.close()}catch(e){}if(r&&r.pk)r.pk.free();if(r&&r.dst)try{outG.disconnect(r.dst)}catch(e){}setBar(0);toast(m)}
 // animated WebP: wrap each browser-encoded still frame (VP8/VP8L + ALPH) in ANMF chunks under VP8X + ANIM
 async function webpAnim(blobs,durs,w,h){let alpha=false;const u24=(a,o,v)=>{a[o]=v&255;a[o+1]=v>>8&255;a[o+2]=v>>16&255};
  const chunk=(id,d)=>{const n=d.length,o=new Uint8Array(8+n+(n&1));for(let i=0;i<4;i++)o[i]=id.charCodeAt(i);o[4]=n&255;o[5]=n>>8&255;o[6]=n>>16&255;o[7]=n>>>24&255;o.set(d,8);return o};
@@ -1932,7 +1941,7 @@ function frame(now){if(!REC&&(window.KK_HOLD||fcSkip(now))){requestAnimationFram
  camFit(dt);cpApply(dt);const c=S.cam,d=c.dist/P.camZ+CFX.v,el=clamp(c.el+P.elev*D,-1.5,1.5),sk=P.shake;if(!CP.inb)c.az+=P.orbit*dt;cam.fov=P.fov;
  cam.position.set(c.px+d*Math.sin(c.az)*Math.cos(el)+sk*Math.sin(t*23.1)*Math.cos(t*7.3),c.py+d*Math.sin(el)+sk*Math.sin(t*19.7+1),d*Math.cos(c.az)*Math.cos(el));cam.lookAt(c.px,c.py,0);cam.rotateZ(P.roll*D);
  {const bi=S.lay.findIndex(l=>l.on);withL(LY[bi>=0?bi:S.al],()=>{const tz=U.uTA.value+(U.uTB.value-U.uTA.value)*U.uMix.value,zk=1+(P.zlen-1)*tz,half=P.volD*(1+P.spread)*zk,gs=Math.max(1,(half+.6)/2.4);grid.scale.z=gs;grid.position.z=0})}
- if(REC||EW||(kkSeen($('gl'))&&!window.KK_SPL))passAll(R,'main',W,H,dpr,false);
+ if(EW&&EW.inl?0:REC||EW||(kkSeen($('gl'))&&!window.KK_SPL))passAll(R,'main',W,H,dpr,false);// the in-viewport export covers the viewport
  if(EW&&EW.w&&EW.w.closed){EW=null;if(REC)cancelExport('Export window closed. Export cancelled.')}
  if(REC||EW)exportStep(now);
  syncDur();withL(LY[PG.mAudio],drawGraph);withL(LY[PG.mVars],()=>drawDNA(dt));drawAxes();drawMaskUI();if(!(RKB.fly&&(FRN&1)))uiAnim(RKB.fly?dt*2:dt);tcStep(dt);hlStep(dt);
@@ -3255,7 +3264,7 @@ krkUI();
 $('bKrack').onclick=krackRelease;
 // ---- splash: the logo comes in over the viewport, then fades out to the waveform. It covers the viewport's own controls; click or tap to skip ----
 {const vz=$('vz'),sp=$('splash')||mk('div'),/* the splash is already in the page's markup, so the very first frame shows it */lg=mk('div','splg'),tt=mk('div','spt'),m=getComputedStyle($('logo')),pc=CL.p1||CL.fg,ez='cubic-bezier(.65,0,.35,1)';
- sp.id='splash';sp.setAttribute('aria-hidden','true');tt.textContent='KracKill$ Vision v1.0';
+ sp.id='splash';sp.setAttribute('aria-hidden','true');tt.textContent='KracKill$ Vision v1.0.3';
  Object.assign(lg.style,{background:pc,webkitMaskImage:m.webkitMaskImage,maskImage:m.maskImage||m.webkitMaskImage,webkitMaskSize:'contain',maskSize:'contain',webkitMaskRepeat:'no-repeat',maskRepeat:'no-repeat',webkitMaskPosition:'center',maskPosition:'center',opacity:0});
  sp.append(lg,tt);vz.appendChild(sp);let gone=false;
  window.KK_SPL=1;/* while the splash covers the window, the visualizer doesn't render under it */

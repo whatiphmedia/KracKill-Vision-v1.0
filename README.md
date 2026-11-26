@@ -1,10 +1,10 @@
-# KracKill$ Vision v1.0
+# KracKill$ Vision v1.0.3
 
 A browser-based 3D audio visualizer in one HTML file. It shows the spectrum of an audio input as a volume of points, stacks three layers with filters, splits stems, transcribes and times lyrics, cuts lyric-driven encyclopedia pages, places video clips and camera moves on a timeline and exports video.
 
 - **Hosted:** https://whatiphmedia.github.io/KracKill-Vision-v1.0/
 - **Offline:** download `index.html` and open it in a browser.
-- **Version:** 1.0.2 (see the [change log](#change-log)).
+- **Version:** 1.0.3, shown in the header (see the [change log](#change-log)).
 
 Audio, video and images are processed on your computer and are never uploaded.
 
@@ -658,7 +658,7 @@ A layer source that fills the frame with encyclopedia pages, cutting to a new pa
 | 5 | Include grid | Includes the workspace grid in the render. |
 | 6 | Import to Resolve | Also writes a DaVinci Resolve timeline (.fcpxml) next to an MP4/MOV, with matching frame rate, resolution and length, the audio, beat markers, and split stems on their own tracks. In Resolve, use File › Import › Timeline. |
 | 7 | Stems | Also saves the four split stems as WAV files covering exactly the exported section, named after the video (`name_drums.wav` …). Works with every format. Split the stems first. |
-| 8 | Preview | Opens a preview window that sizes itself to the window. |
+| 8 | Preview | Opens a preview window that sizes itself to the window. On phones and tablets the viewport becomes the preview instead (see below). |
 | 9 | Export render | Renders the export. |
 
 - **What is exported:** only the visualizer, with no interface.
@@ -668,6 +668,7 @@ A layer source that fills the frame with encyclopedia pages, cutting to a new pa
   - **Opus** where the browser has no AAC encoder. It plays in Chrome, Edge, Firefox, VLC and the Windows player. The finish message says when Opus was used.
   - A WAV copy is written next to the MP4 only when the audio is Opus and **Import to Resolve** is on, because Resolve can't read Opus. If a browser can encode neither, the audio is saved as a WAV.
 - **MOV:** uses PCM audio for compatibility with editing software.
+- **Phones and tablets:** the export runs inside the viewport, framed to the output's aspect ratio, with progress and buttons along its bottom. No new tab opens (a background tab stops rendering), the covered live view stops drawing, and the screen stays awake. Video is encoded at about 0.3 bits per pixel per frame (8–30 Mbps), as phones hold the whole video in memory until it is saved. Keep the app in front until it finishes.
 - **Side files stay together:** with Import to Resolve or Stems on and no folder picked, the export asks for one folder and saves the video, the timeline and the stems there under the same name. The timeline links them by name, so Resolve finds them without the folder path. An existing file is never overwritten; the new one gets ` (2)`. Browsers without folder access save everything to Downloads.
 - **Quality:** H.264 is encoded at near-constant quality (quantizer 17) where the browser supports it, otherwise at about 0.5 bits per pixel per frame (12–160 Mbps), so blur and fast motion hold up.
 - **Colour:** encoded and tagged in the colour space set in Color Palette Select.
@@ -889,6 +890,11 @@ KracKill$ Vision is free and ongoing. If you build presets you are proud of, sha
 ---
 
 ## Change log
+
+### 1.0.3
+
+- **Phone export fixed:** it froze because the export window opened as a new tab. It now runs in the viewport, framed to the output's aspect ratio, with one render pass, the screen kept awake and lighter encoding.
+- The version shows in the header.
 
 ### 1.0.2
 
