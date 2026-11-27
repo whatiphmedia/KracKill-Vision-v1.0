@@ -1,10 +1,10 @@
-# KracKill$ Vision v1.0.3
+# KracKill$ Vision v1.0.4
 
 A browser-based 3D audio visualizer in one HTML file. It shows the spectrum of an audio input as a volume of points, stacks three layers with filters, splits stems, transcribes and times lyrics, cuts lyric-driven encyclopedia pages, places video clips and camera moves on a timeline and exports video.
 
 - **Hosted:** https://whatiphmedia.github.io/KracKill-Vision-v1.0/
 - **Offline:** download `index.html` and open it in a browser.
-- **Version:** 1.0.3, shown in the header (see the [change log](#change-log)).
+- **Version:** 1.0.4, shown in the header (see the [change log](#change-log)).
 
 Audio, video and images are processed on your computer and are never uploaded.
 
@@ -398,7 +398,7 @@ These are post filters, run on top of Krack'd Vision, both live and in the expor
 - **Falloff and size** sliders sit in the visualizer's top-right corner. The falloff is smooth so that soft effects have no hard edge.
 - **Video:** a video can also act as the mask (see [Video lanes](#video-lanes)).
 
-**Resolution:** filter sizes are measured against a 720-line picture and scaled to the output, so an effect looks the same in the preview, the viewport and every export size and aspect ratio. Small previews render at 720 lines at least. One-pixel lines can't scale, so very fine patterns (hatch, stitch, pixel grid) can differ slightly.
+**Resolution:** filter sizes are measured against a 720-line picture and scaled to the output, so an effect looks the same in the preview, the viewport and every export size and aspect ratio. The export preview and, on computers, the viewport render at 720 lines at least, so both match the export. The waveform's lines are drawn heavier in larger renders so they keep the same weight (on phones, the weight they have in the viewport).
 
 ### Color Palette Select
 
@@ -406,7 +406,7 @@ These are post filters, run on top of Krack'd Vision, both live and in the expor
 
 These are the colours used by layers set to **Palette colour**. Pick a preset, edit the swatches, and save named palettes. The interface itself takes its colours from Krack'd Theme. The video lanes take their identifying colours from palette colours 2–4.
 
-**Colour space** (global, remembered in this browser): **sRGB** (default), **Rec.709** (gamma 2.4, for broadcast and grading), or **Display P3**. It sets how MP4 and MOV exports are encoded and tagged, so players and editors show the same colours as the viewport. The preview and viewport always draw in sRGB, on desktop and on phones.
+**Colour space** (global, remembered in this browser): **sRGB** (default), **Rec.709** (gamma 2.4, for broadcast and grading), or **Display P3**. It sets how MP4 and MOV exports are encoded. All three are tagged with the BT.709 transfer, which players show as rendered, so the file matches the viewport. The preview and viewport always draw in sRGB, on desktop and on phones.
 
 ### Krack'd Theme
 
@@ -668,10 +668,11 @@ A layer source that fills the frame with encyclopedia pages, cutting to a new pa
   - **Opus** where the browser has no AAC encoder. It plays in Chrome, Edge, Firefox, VLC and the Windows player. The finish message says when Opus was used.
   - A WAV copy is written next to the MP4 only when the audio is Opus and **Import to Resolve** is on, because Resolve can't read Opus. If a browser can encode neither, the audio is saved as a WAV.
 - **MOV:** uses PCM audio for compatibility with editing software.
-- **Phones and tablets:** the export runs inside the viewport, framed to the output's aspect ratio, with progress and buttons along its bottom. No new tab opens (a background tab stops rendering), the covered live view stops drawing, and the screen stays awake. Video is encoded at about 0.3 bits per pixel per frame (8–30 Mbps), as phones hold the whole video in memory until it is saved. Keep the app in front until it finishes.
+- **Phones and tablets:** a loaded track exports frame by frame: each frame is drawn on its own clock and reacts to the track's audio at that exact moment (stems and video lanes included), so the file never skips or repeats a frame. A slow phone takes longer than the clip; the track doesn't play while it renders. The preview shows every frame, thinning out only if the phone falls behind. Mic, tab audio and WebM export in real time. The export runs inside the viewport, framed to the output's aspect ratio, with progress and buttons along its bottom. No new tab opens (a background tab stops rendering), the covered live view stops drawing, and the screen stays awake. Video is encoded at about 0.3 bits per pixel per frame (8–30 Mbps), as phones hold the whole video in memory until it is saved. Keep the app in front until it finishes.
 - **Side files stay together:** with Import to Resolve or Stems on and no folder picked, the export asks for one folder and saves the video, the timeline and the stems there under the same name. The timeline links them by name, so Resolve finds them without the folder path. An existing file is never overwritten; the new one gets ` (2)`. Browsers without folder access save everything to Downloads.
 - **Quality:** H.264 is encoded at near-constant quality (quantizer 17) where the browser supports it, otherwise at about 0.5 bits per pixel per frame (12–160 Mbps), so blur and fast motion hold up.
-- **Colour:** encoded and tagged in the colour space set in Color Palette Select.
+- **Colour:** encoded in the colour space set in Color Palette Select.
+- **While exporting:** the decorative animations (header, clock, mini game, graphs, timeline) pause, on every device.
 - **Highest resolution:** 1440p. Exports render in real time, and 4K could not be kept clean.
 - **Repeated frames:** if rendering can't keep up with the frame rate, frames are repeated. The finish message says how many, so you know when to lower the resolution or turn off some Krack'd FX.
 - **Wikipedia credits:** a video that showed Wikipedia text is saved with a credits file next to it (see [Wiki layer](#wiki-layer)).
@@ -890,6 +891,12 @@ KracKill$ Vision is free and ongoing. If you build presets you are proud of, sha
 ---
 
 ## Change log
+
+### 1.0.4
+
+- **Phone export is frame by frame:** no skipped or repeated frames; the preview drops frames only if the phone falls behind.
+- **Export matches the viewport:** the desktop viewport renders on the export's pixel grid, waveform lines keep their weight at every size, and colours are tagged so players show them as rendered.
+- Decorative animations pause during export.
 
 ### 1.0.3
 

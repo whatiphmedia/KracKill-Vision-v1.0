@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'wasm-unsafe-eval' blob: data:; worker-src blob:; connect-src ws://127.0.0.1:* ws://localhost:* https://cdn.jsdelivr.net/npm/onnxruntime-web@1.31.1/dist/ 'self' https://raw.githubusercontent.com/whatiphmedia/KracKill-Vision-v1.0/ https://huggingface.co/Best-Practice/spleeter-4stems-onnx/ https://huggingface.co/onnx-community/whisper-base_timestamped/ https://*.huggingface.co https://*.hf.co https://en.wikipedia.org/w/api.php blob: data:; img-src data: blob:; media-src blob: data:; style-src 'unsafe-inline'; font-src data: blob:; frame-src 'self' blob:; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
-<title>KracKill$ Vision v1.0.3</title>
+<title>KracKill$ Vision v1.0.4</title>
 
 <style>
 /* fonts embedded from @fontsource 5.2.7 (SIL Open Font License 1.1): Rajdhani by Indian Type Foundry, Share Tech Mono by Carrois Type Design */
@@ -228,7 +228,7 @@ var oc=c.transferControlToOffscreen();w.postMessage({cv:oc,W:W,H:H,d:d,D:m.D,col
 /* the flight starts with the page's first frame on screen, not before it */requestAnimationFrame(function(){w.postMessage({go:1});m.t0=Date.now()});
 if(m.css){var st=document.createElement('style');st.textContent=m.css;document.head.appendChild(st)}}catch(e){if(window.KK_RL)KK_RL.late=1}})();</script>
 <div id="app">
- <header id="hd"><span id="lgw"><span id="logo" role="img" aria-label="KracKill$ logo"></span></span><b>KracKill$ Vision v1.0.3</b><span id="status">Demo signal playing</span>
+ <header id="hd"><span id="lgw"><span id="logo" role="img" aria-label="KracKill$ logo"></span></span><b>KracKill$ Vision v1.0.4</b><span id="status">Demo signal playing</span>
   <button id="bCache" aria-expanded="false" aria-controls="pcache" title="Preset manager: save, name and recall presets, share them as codes, and export or import the whole set as a file">Preset manager</button><button id="bOsc" aria-expanded="false" aria-controls="oscp" title="OSC control: map every variable, Krack’d FX, Krack’d Vision and colour setting to an outside controller (free Open Stage Control bridge)">OSC</button><button id="bFresh" title="Re-launch: start over as on a first visit (clears every setting saved in this browser and reloads; downloaded stem models are kept)">Re-launch</button><button id="bLog" title="Download a debug log (errors, events, your setup and settings) to share when something goes wrong">Debug log</button><button id="bFull">Fullscreen</button></header>
 <div id="oscp" role="dialog" aria-label="OSC control" hidden><div class="pch"><b>OSC control</b><span id="oscSt">Not connected</span><button id="oscX" aria-label="Close OSC panel">×</button></div><div class="row"><input id="oscUrl" type="text" value="ws://127.0.0.1:8090" aria-label="Bridge address (this computer only)" spellcheck="false"><input id="oscCode" type="text" placeholder="Pairing code" maxlength="6" aria-label="Pairing code" spellcheck="false" autocomplete="off"><button id="oscGo">Connect</button></div><div class="row"><label class="ck">Values <select id="oscNorm" aria-label="OSC value range"><option value="0">Real units</option><option value="1">0 – 1</option></select></label><button id="oscFb" class="on" aria-pressed="true" title="Send changes made here back to the controller, so its faders follow">Feedback: On</button></div><div class="row"><button id="oscBr" title="The bridge: a custom module for Open Stage Control">Bridge file</button><button id="oscLay" title="A ready-made Open Stage Control layout with a control for every address">Controller layout</button><button id="oscCsv" title="Every address with its type and range (CSV)">Address list</button></div><div class="hint">1 · Get Open Stage Control (free): openstagecontrol.ammd.net. 2 · In its launcher set <b>custom-module</b> to the bridge file and <b>load</b> to the controller layout, then Start. 3 · Type the pairing code it shows here and Connect. The bridge only works on this computer; phones and tablets can use Open Stage Control’s own page. Addresses look like /kk/a/var/waveH, /kk/b/fx/bloom/on, /kk/a/vision/geo.</div></div>
 <div id="pcache" role="dialog" aria-label="Preset manager" hidden><div class="pch"><b>Preset manager</b><span id="pcInfo"></span><button id="pcX" aria-label="Close preset cache">×</button></div><div class="row"><input id="pcName" type="text" placeholder="Name (optional)" aria-label="Name for the new preset" maxlength="60"><button id="pcAdd">Add current</button></div><div id="pcList" role="list"></div><div class="pch"><b>Recent Release the krack</b><span>last 20</span></div><div id="krkList" role="list"></div><div class="row"><input id="code" type="text" placeholder="Paste a preset code" aria-label="Preset code" spellcheck="false"><button id="pcLoad" title="Apply the pasted code">Load code</button><button id="pcCopy" title="Put the current state in the box as a code and copy it">Copy current</button></div><div class="row"><button id="pcExp">Export cache</button><button id="pcImp">Import cache…</button><button id="pcClr">Clear</button><input id="pcFile" type="file" accept=".json,application/json" hidden></div><div class="hint" id="pcHint"></div></div>
@@ -292,7 +292,7 @@ const dlStr=a=>a.map(x=>x instanceof Error?(x.stack||x.message):x&&typeof x==='o
 addEventListener('error',e=>{if(e.target&&e.target!==window&&e.target.tagName){dlog('error','could not load '+e.target.tagName.toLowerCase());return}dlog('error',(e.message||'error')+(e.lineno?' (line '+e.lineno+':'+e.colno+')':'')+(e.error&&e.error.stack?'\n'+e.error.stack:''))},true);
 addEventListener('unhandledrejection',e=>dlog('reject',dlStr([e.reason])));
 addEventListener('securitypolicyviolation',e=>dlog('blocked',e.violatedDirective+' · '+(e.blockedURI||'inline')));
-dlog('start','KracKill$ Vision v1.0.3');addEventListener('visibilitychange',()=>dlog('tab',document.hidden?'hidden (drawing pauses while the tab is in the background)':'visible'));
+dlog('start','KracKill$ Vision v1.0.4');addEventListener('visibilitychange',()=>dlog('tab',document.hidden?'hidden (drawing pauses while the tab is in the background)':'visible'));
 {const st=document.getElementById('status');if(st)new MutationObserver(()=>{const t=st.textContent,k=t.replace(/ · \d+( min \d+)? s$/,'').replace(/ · about [^·]*/,''),now=Date.now();if(k!==dlLastSt&&!(DLSEEN.get(k)>now-6e4)){dlLastSt=k;DLSEEN.set(k,now);if(DLSEEN.size>500)DLSEEN.clear();dlog('status',t)}}).observe(st,{childList:true,characterData:true,subtree:true})}
 (function f(){dlF++;requestAnimationFrame(f)})();setInterval(()=>{dlog('perf',(dlF/30).toFixed(1)+' fps'+(performance.memory?' · JS memory '+Math.round(performance.memory.usedJSHeapSize/1048576)+' MB':''));dlF=0},30000);
 if(!window.THREE){const d=document.createElement('div');d.setAttribute('role','alert');d.setAttribute('style','position:fixed;inset:0;z-index:999;display:grid;place-items:center;padding:2em;background:#050505;color:#f2f2f2;font:15px/1.5 monospace;text-align:center');
@@ -604,7 +604,7 @@ const fmt=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
 const audible=i=>T.solo.some(x=>x)?!!T.solo[i]:!T.mute[i];
 // monitor routing: preview swaps what you HEAR between the full mix and the timeline stem mix; export audio is tapped from outG (full mix) and never changes
 function updGains(){SA.forEach((s,i)=>s.g.gain.value=audible(i)?T.vol[i]:0);if(outG)outG.gain.value=S.outVol;if(mixMon){const pv=T.prev&&!!T.st;mixMon.gain.value=pv?0:1;stemMon.gain.value=pv?S.outVol:0}}
-function tpos(){if(!T.on)return T.pos0;let p=actx.currentTime-T.t0;if(T.loop&&T.le>T.ls&&p>=T.le)p=T.ls+((p-T.ls)%(T.le-T.ls));return Math.min(p,T.buf.duration)}
+function tpos(){if(REC&&REC.off)return REC.pos;if(!T.on)return T.pos0;let p=actx.currentTime-T.t0;if(T.loop&&T.le>T.ls&&p>=T.le)p=T.ls+((p-T.ls)%(T.le-T.ls));return Math.min(p,T.buf.duration)}
 function stopSrcs(){T.srcs.forEach(s=>{try{s.stop()}catch(e){}});T.srcs=[];vaStop()}
 function tplay(from){if(!T.buf)return;ensureCtx();stopSrcs();stopLive();const lp=T.loop&&T.le>T.ls;if(lp&&from>=T.le)from=T.ls;
  const go=(b,dst)=>{const s=actx.createBufferSource();s.buffer=b;s.connect(dst);if(lp){s.loop=true;s.loopStart=T.ls;s.loopEnd=T.le}s.start(0,clamp(from,0,b.duration-.01));T.srcs.push(s)};
@@ -800,7 +800,7 @@ function tlDraw(){const d=T.buf?T.buf.duration:0,p=T.buf?tpos():0;const tt=$('tT
 // ================= 3D scene =================
 const VS=`attribute vec3 aB,aN,aNB,aF;attribute float aR;uniform sampler2D uHist,uBandH;
 uniform float uMix,uTime,uWaveH,uNoise,uNS,uNSp,uSpread,uDens,uSize,uPS,uBright,uSat,uGlow,uFall,uPh,uRows,uCM,uTint,uSzA,uX1,uX2,uXo,uOpa,uWA,uWB,uTA,uTB,uZL,uSeam,uSW;
-uniform sampler2D uCT;uniform float uCA,uCB,uCMd,uCH;uniform float uVA,uVB,uZA,uZB,uYA,uYB,uGA,uGB,uBP,uBF,uTw,uWg,uWgT;uniform vec3 uBend;uniform vec3 uVol,uTrans;uniform mat3 uRot;uniform vec3 uPal[5];uniform float uGF;varying vec3 vC;varying float vA,vG;
+uniform sampler2D uCT;uniform float uCA,uCB,uCMd,uCH;uniform vec2 uLO;uniform float uVA,uVB,uZA,uZB,uYA,uYB,uGA,uGB,uBP,uBF,uTw,uWg,uWgT;uniform vec3 uBend;uniform vec3 uVol,uTrans;uniform mat3 uRot;uniform vec3 uPal[5];uniform float uGF;varying vec3 vC;varying float vA,vG;
 float h3(vec3 p){p=fract(p*.3183099+.1);p*=17.;return fract(p.x*p.y*p.z*(p.x+p.y+p.z));}
 float n3(vec3 x){vec3 i=floor(x),f=fract(x);f=f*f*(3.-2.*f);
 return mix(mix(mix(h3(i),h3(i+vec3(1,0,0)),f.x),mix(h3(i+vec3(0,1,0)),h3(i+vec3(1,1,0)),f.x),f.y),mix(mix(h3(i+vec3(0,0,1)),h3(i+vec3(1,0,1)),f.x),mix(h3(i+vec3(0,1,1)),h3(i+vec3(1,1,1)),f.x),f.y),f.z);}
@@ -836,7 +836,7 @@ p*=uVol*(1.+uSpread);
 if(wz>1e-3)p=mix(p,bendAx(p,zk*uVol.z*sp,vec3(0.,0.,-1.),vec3(0.,1.,0.),vec3(1.,0.,0.),uBend.x,uBend.y),wz);
 if(wy>1e-3)p=mix(p,bendAx(p,uVol.y*sp,vec3(0.,-1.,0.),vec3(1.,0.,0.),vec3(0.,0.,1.),uBend.y,uBend.z),wy);}
 p=uRot*p;p+=uTrans;
-vec4 mv=viewMatrix*vec4(p,1.);gl_Position=projectionMatrix*mv;
+vec4 mv=viewMatrix*vec4(p,1.);gl_Position=projectionMatrix*mv;gl_Position.xy+=uLO*gl_Position.w;
 gl_PointSize=uSize*(1.+mix(s,lv,vw)*uSzA)*mix(1.,.5+.5*lit,vw)*uPS*(12./max(.1,-mv.z))*(1.+vG*.7);
 vec3 bc=bandCol(fq);if(ew<1.)bc=mix(.5*(bandCol(0.)+bandCol(1.)),bc,ew);
 vec3 c;if(uCM>1.5&&uCMd>.5){c=texture2D(uCT,vec2(fq,1.-t)).rgb*(.3+s*1.15);}else if(uCM<.5||uCM>1.5){c=mix(slice,bc,uTint)*(.16+s*1.25);}else{c=pal(clamp(s*.75+(aF.z*.5+.5)*.25,0.,1.))*(.55+s*.9);}
@@ -844,7 +844,7 @@ if(vw>.5){vec3 lc=uCM>.5&&uCM<1.5?pal(clamp(lv*.85+s*.15,0.,1.)):mix(mix(slice,b
 float l=dot(c,vec3(.299,.587,.114));vC=mix(vec3(l),c,uSat)*mix(uBright,max(uBright,.55),vw);/* the volume never goes darker than this, so the whole cube always reads */vA=uOpa;}`;
 const FSP=`varying vec3 vC;varying float vA,vG;void main(){float d=length(gl_PointCoord-.5)*2.;if(d>1.)discard;float k=1.+vG*.7,dc=d*k;vec3 c=vec3(0.);float a=0.;
 if(dc<1.){c=vC*(.35+.65*sqrt(1.-dc*dc));a=1.;}float g=pow(1.-d,2.)*vG*.8;c+=vC*g;a=max(a,clamp(g,0.,1.))*vA;gl_FragColor=vec4(c*vA,a);}`;
-const FSL=`varying vec3 vC;varying float vG;uniform float uLineA;void main(){gl_FragColor=vec4(vC*uLineA*(1.+vG*.8),1.);}`;
+const FSL=`varying vec3 vC;varying float vG;uniform float uLineA,uLW;void main(){gl_FragColor=vec4(vC*uLineA*uLW*(1.+vG*.8),1.);}`;
 const R=new THREE.WebGLRenderer({canvas:$('gl'),antialias:false});R.setClearColor(0x000000);const srgbGL=r=>{try{const g=r.getContext();if('drawingBufferColorSpace' in g)g.drawingBufferColorSpace='srgb';if('unpackColorSpace' in g)g.unpackColorSpace='srgb'}catch(e){}};srgbGL(R);
 const cam=new THREE.PerspectiveCamera(50,1,.05,600);
 // ---- UI accents from the Color Palette: the most saturated colors that still contrast with the panels ----
@@ -867,7 +867,7 @@ function mkLRT(){const r={sm:new Float32Array(NB),pk:new Float32Array(NB),fb:fbG
  r.histTex=new THREE.DataTexture(r.hist,NS,HR,THREE.LuminanceFormat,THREE.UnsignedByteType);r.bandTex=new THREE.DataTexture(r.bandH,HR,1,THREE.RGBAFormat,THREE.UnsignedByteType);
  [r.histTex,r.bandTex].forEach(t=>{t.minFilter=t.magFilter=THREE.LinearFilter;t.generateMipmaps=false;t.needsUpdate=true});
  const u=r.U={uHist:{value:r.histTex},uBandH:{value:r.bandTex},uCT:{value:BLKT},uVol:{value:new THREE.Vector3(1,1,1)},uTrans:{value:new THREE.Vector3()},uRot:{value:new THREE.Matrix3()},uPal:{value:PALV},uPS:{value:1},uRows:{value:HR}};
- ['uMix','uTime','uWaveH','uNoise','uNS','uNSp','uSpread','uDens','uSize','uBright','uSat','uGlow','uFall','uPh','uCM','uTint','uSzA','uX1','uX2','uXo','uOpa','uWA','uWB','uTA','uTB','uZL','uSeam','uSW','uLineA','uCA','uCB','uCMd','uCH','uGF','uVA','uVB','uZA','uZB','uYA','uYB','uGA','uGB','uBP','uBF','uTw','uWg','uWgT'].forEach(k=>u[k]={value:0});u.uBend={value:new THREE.Vector3()};u.uMix.value=1;
+ ['uMix','uTime','uWaveH','uNoise','uNS','uNSp','uSpread','uDens','uSize','uBright','uSat','uGlow','uFall','uPh','uCM','uTint','uSzA','uX1','uX2','uXo','uOpa','uWA','uWB','uTA','uTB','uZL','uSeam','uSW','uLineA','uCA','uCB','uCMd','uCH','uGF','uVA','uVB','uZA','uZB','uYA','uYB','uGA','uGB','uBP','uBF','uTw','uWg','uWgT'].forEach(k=>u[k]={value:0});u.uBend={value:new THREE.Vector3()};u.uMix.value=1;u.uLO={value:new THREE.Vector2()};u.uLW={value:1};
  r.matP=mat(FSP,u);r.matL=mat(FSL,u);return r}
 function stash(r){Object.assign(r,{pts,lns,A,B,NA,NBv,LI,LF,mixT,U,matP,matL,histTex,bandTex,hist,bandH,specData,sm,pk,SV,P,BE,KV,KVU,PO,hAcc,bAvg,beatV,lastBeat,aX,aY,aZ,scene,CU,fb})}
 function load(r){({pts,lns,A,B,NA,NBv,LI,LF,mixT,U,matP,matL,histTex,bandTex,hist,bandH,specData,sm,pk,SV,P,BE,KV,KVU,PO,hAcc,bAvg,beatV,lastBeat,aX,aY,aZ,scene,CU,fb}=r)}
@@ -915,7 +915,8 @@ const grid=(()=>{const p=[],E=2.4,Y0=-1.5,Y1=1.6,n=12;for(let i=0;i<=n;i++){cons
  p.push(a,Y0,-E,a,Y0,E, -E,Y0,a,E,Y0,a, a,Y0,-E,a,Y1,-E, -E,y,-E,E,y,-E, -E,Y0,a,-E,Y1,a, -E,y,-E,-E,y,E)}
  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));const o=new THREE.LineSegments(g,gridMat);o.renderOrder=-10;o.frustumCulled=false;return o})();
 let W=2,H=2,dpr=1;const vz=$('vz');
-function resize(){dpr=Math.min(devicePixelRatio||1,2);W=Math.max(2,vz.clientWidth);H=Math.max(2,vz.clientHeight);R.setPixelRatio(dpr);R.setSize(W,H,false)}
+function resize(){dpr=Math.min(devicePixelRatio||1,2);W=Math.max(2,vz.clientWidth);H=Math.max(2,vz.clientHeight);if(!(matchMedia('(pointer:coarse)').matches&&!matchMedia('(any-pointer:fine)').matches))dpr=Math.min(3,Math.max(dpr,720/H));/* 720: FXR, declared further down */
+ window.LREF=matchMedia('(pointer:coarse)').matches&&!matchMedia('(any-pointer:fine)').matches?Math.max(300,Math.round(H*dpr)):720;R.setPixelRatio(dpr);R.setSize(W,H,false)}
 new ResizeObserver(resize).observe(vz);resize();
 // ---- post FX pipeline (shared materials, one pair of render targets per renderer) ----
 const FXQ=new THREE.Scene(),FXC=new THREE.OrthographicCamera(-1,1,1,-1,0,1),FXM=new THREE.Mesh(new THREE.PlaneBufferGeometry(2,2));FXM.frustumCulled=false;FXQ.add(FXM);
@@ -994,6 +995,11 @@ void main(){vec3 c=vec3(0.);bool base=true;
  if(uOn.y>.5){c=lay(c,texture2D(t1,vUv).rgb,uMd.y,uOp.y,base);base=false;}
  if(uOn.z>.5){c=lay(c,texture2D(t2,vUv).rgb,uMd.z,uOp.z,base);}
  gl_FragColor=vec4(c,1.);}`});
+const LNO=[[0,1],[1,0],[0,-1],[-1,0],[1,1],[-1,-1],[1,-1],[-1,1]];
+function lnThick(rr,Wp,Hp){const n=Math.min(LNO.length,Hp/(window.LREF||720)-1);if(n<.04||!lns||!lns.visible||!(P.lineA>0))return;
+ const vis=scene.children.map(o=>o.visible);scene.children.forEach(o=>{o.visible=o===lns});const ac=rr.autoClear;rr.autoClear=false;
+ for(let j=0;j<n;j++){const o=LNO[j];U.uLO.value.set(2*o[0]/Wp,2*o[1]/Hp);U.uLW.value=Math.min(1,n-j);rr.render(scene,cam)}
+ U.uLO.value.set(0,0);U.uLW.value=1;rr.autoClear=ac;scene.children.forEach((o,i)=>{o.visible=vis[i]})}
 function fxFree(po){['a','b','k1','k2','pm','mb1','mb2'].forEach(k=>{if(po[k]){po[k].dispose();po[k]=null}});Object.values(po.fbk||{}).forEach(t=>t.dispose());po.fbk={};if(po.hs){po.hs.rt.dispose();po.hs=null}po.ph={}}
 function blitTo(rr,src,dst){CPM.uniforms.tD.value=src.texture;FXM.material=CPM;rr.setRenderTarget(dst);rr.render(FXQ,FXC)}
 const FXR=720;// effect pixels per frame height
@@ -1003,8 +1009,8 @@ function renderFX(rr,po,w,h,pr){const list=fxOrd().slice().reverse().map(id=>FXD
  rr.setRenderTarget(po.a);const vq=VLY&&VLY[CUR.i],vv=S.vid.src==='video'&&!!vq;
  if(S.vid.src==='wiki'){rr.clear();wikiDraw(Wp,Hp,rr)}
  else if(vv){rr.clear();if(vq.act){const u=VIDM.uniforms;vidU(u,vq,Wp,Hp);u.tD.value=vq.tex;u.uO.value=P.vd_op??1;u.uB.value=P.vd_br??1;FXM.material=VIDM;rr.render(FXQ,FXC)}}// the layer shows its routed video
- else if(S.cust.bg>0&&CU.tex){const u=BGM.uniforms;u.tD.value=CU.tex;u.uA.value=CU.w/CU.h;u.uO.value=S.cust.bg;u.uRes.value.set(Wp,Hp);FXM.material=BGM;rr.render(FXQ,FXC);rr.autoClear=false;rr.render(scene,cam);rr.autoClear=true}
- else rr.render(scene,cam);
+ else if(S.cust.bg>0&&CU.tex){const u=BGM.uniforms;u.tD.value=CU.tex;u.uA.value=CU.w/CU.h;u.uO.value=S.cust.bg;u.uRes.value.set(Wp,Hp);FXM.material=BGM;rr.render(FXQ,FXC);rr.autoClear=false;rr.render(scene,cam);rr.autoClear=true;lnThick(rr,Wp,Hp)}
+ else{rr.render(scene,cam);lnThick(rr,Wp,Hp)}
  let rd=po.a;
  if(kv){const tr=P.kv_trail>.001,u=KVM.uniforms;if(tr&&!po.k1){po.k1=mkRT(Wp,Hp);po.k2=mkRT(Wp,Hp);for(const t of[po.k1,po.k2]){rr.setRenderTarget(t);rr.clear()}}
   u.tD.value=rd.texture;u.tP.value=tr?po.k1.texture:rd.texture;u.uRes.value.set(Wp,Hp);kvUni(u);FXM.material=KVM;
@@ -1292,7 +1298,7 @@ $('fxOff').onclick=()=>{S.fx={};S.fxo=[];refreshMod('mFx');updInfo();if(KG==='FX
 // palettes
 function palUI(){const el=$('pal');el.innerHTML='';S.pal.forEach((c,i)=>{const p=mk('input');p.type='color';p.value=c;p.setAttribute('aria-label','Palette color '+(i+1));p.oninput=()=>{S.pal[i]=p.value;applyPal()};el.appendChild(p)})}
 let CSO=(()=>{try{const v=localStorage.getItem('kk-cs');return['srgb','709','p3'].includes(v)?v:'srgb'}catch(e){return'srgb'}})();
-const csTag=()=>CSO==='709'?{p:'bt709',t:'bt709',m:'bt709',n:[1,1,1],q:1}:CSO==='p3'?{p:'smpte432',t:'iec61966-2-1',m:'bt709',n:[12,13,1],q:2}:{p:'bt709',t:'iec61966-2-1',m:'bt709',n:[1,13,1],q:0};
+const csTag=()=>CSO==='709'?{p:'bt709',t:'bt709',m:'bt709',n:[1,1,1],q:1}:CSO==='p3'?{p:'smpte432',t:'bt709',m:'bt709',n:[12,1,1],q:2}:{p:'bt709',t:'bt709',m:'bt709',n:[1,1,1],q:0};
 $('csSel').value=CSO;$('csSel').onchange=e=>{CSO=e.target.value;try{localStorage.setItem('kk-cs',CSO)}catch(_){}$('status').textContent='Output color space: '+e.target.selectedOptions[0].textContent;if(typeof updInfo==='function')updInfo()};
 const PP=[['Spectrum',['#14004d','#00aaff','#29ffa0','#ffe600','#ff2bd6']],['Ember',['#1a0000','#a3001b','#ff5a00','#ffc400','#fff3b0']],['Glacier',['#020b2e','#0057ff','#00e0ff','#9dffe8','#ffffff']],['Toxic',['#050d00','#1a8f00','#7aff00','#e8ff2b','#ffffff']],['Vapor',['#1b0038','#7a2bff','#ff3df2','#ff9bd0','#7fffe6']],['Mono',['#000000','#444444','#888888','#cccccc','#ffffff']]];
 let pals=[];try{pals=(parseSafe(localStorage.getItem('wl-pals')||'[]')||[]).filter(p=>p&&Array.isArray(p.c)&&p.c.every(isHex)).map(p=>({n:str(p.n,60),c:p.c.slice(0,5)}))}catch(e){pals=[]}
@@ -1527,7 +1533,7 @@ function oscOpen(on){const p=$('oscp'),b=$('bOsc');if(on){p.style.top=Math.max(8
 
 // debug log download: environment, capabilities, current settings, then every logged event
 async function dlReport(){const L=[],A=(k,v)=>L.push(k.padEnd(22)+v),d=new Date(),yn=b=>b?'yes':'no';
- L.push('KracKill$ Vision v1.0.3 · debug log','created '+d.toString(),'');L.push('== Environment');
+ L.push('KracKill$ Vision v1.0.4 · debug log','created '+d.toString(),'');L.push('== Environment');
  A('Browser',navigator.userAgent);A('Platform',(navigator.userAgentData&&navigator.userAgentData.platform)||navigator.platform||'?');A('Page opened from',location.protocol==='file:'?'a local file':location.protocol+'//'+location.host);
  A('Screen',screen.width+'×'+screen.height+' @'+(devicePixelRatio||1)+'x · window '+innerWidth+'×'+innerHeight);A('CPU threads',navigator.hardwareConcurrency||'?');A('Memory (approx GB)',navigator.deviceMemory||'?');
  A('Reduced motion',RM.matches?'system asks for it ('+(S.ui.mo?'Always animate':'Follow system')+')':'no');
@@ -1835,7 +1841,7 @@ async function startExport(){if(REC||busy)return;WKU.clear();if(E.fmt==='webp'&&
   else if((E.rv&&vcfg||E.stx&&T.st)&&window.showDirectoryPicker){setMsg('Pick the folder for the video and its side files…');sd=await showDirectoryPicker({id:'kk-exp',mode:'readwrite'});fh=await sd.getFileHandle(await freeName(sd,fname(ext)),{create:true})}
   else if(window.showSaveFilePicker)fh=await showSaveFilePicker({suggestedName:fname(ext),types:[{description:frm?'Animated image':'Video',accept:{[ext==='mov'?'video/quicktime':mime.split(';')[0]||'video/webm']:['.'+ext]}}]})}
  catch(e){if(e.name==='AbortError'){busy=false;setMsg('Export cancelled');return}fh=null}
- try{const dur=expDur();if(E.match&&T.buf){T.pos0=loopOn()?T.ls:0;tplay(T.pos0)}// start the render at the loop (or track) start so it lines up
+ try{const dur=expDur();if(E.match&&T.buf){T.pos0=loopOn()?T.ls:0;tplay(T.pos0)}const offOK=MOBX()&&(vcfg||frm)&&mode==='file'&&!!T.buf;if(offOK&&!T.on)tplay(T.pos0);// start the render at the loop (or track) start so it lines up
   passAll(R2,'exp',w,h,1,true);const r={t0:performance.now(),dur:dur*1000,w,h,fps:E.fps,frm,gif:E.fmt==='gif',ext,mime,fh,sd:E.dir||sd,stx:E.stx,next:0,last:0,chunks:[],wp:[],ts:[],ap0:mode==='file'&&T.buf&&T.on?tpos():null,alp:!!(T.loop&&T.le>T.ls),als:T.ls,ale:T.le};
   if(vcfg){Object.assign(r,{wc:1,mov:E.fmt==='mov',total:Math.max(1,Math.round(dur*E.fps)),n:0,vf:[],beats:[],rv:E.rv,rvDir:$('exRvDir').value.trim(),vdesc:null,verr:null,pk:null,
     ap0:mode==='file'&&T.buf&&T.on?tpos():null,alp:!!(T.loop&&T.le>T.ls),als:T.ls,ale:T.le});try{r.pk=yuvPacker()}catch(e){r.pk=null}
@@ -1844,16 +1850,17 @@ async function startExport(){if(REC||busy)return;WKU.clear();if(E.fmt==='webp'&&
   else{const st=ec.captureStream(E.fps);if(mode==='file'&&actx&&outG){try{r.dst=actx.createMediaStreamDestination();outG.connect(r.dst);r.dst.stream.getAudioTracks().forEach(t=>st.addTrack(t))}catch(e){}}
    r.mr=new MediaRecorder(st,{...(mime?{mimeType:mime}:{}),videoBitsPerSecond:clamp(w*h*E.fps*.35,1e7,1.2e8)});r.mr.ondataavailable=e=>{if(e.data.size)r.chunks.push(e.data)};r.mr.start(250)}
   if(!vcfg&&(E.fmt==='mp4'||E.fmt==='mov')&&ext==='webm')toast(E.fmt.toUpperCase()+' isn’t supported in this browser. Recording as WebM.');
-  REC=r;wlOn();const b=EW.doc.getElementById('go');if(b)b.disabled=true;setMsg('Rendering visualizer only…')}
+  REC=r;wlOn();window.KKX=1;if(offOK&&r.ap0!=null)oexStart(r);const b=EW.doc.getElementById('go');if(b)b.disabled=true;setMsg('Rendering visualizer only…')}
  catch(e){toast('Export failed: '+e.message);closeEW()}busy=false}
 function exportStep(now){if(REC){const r=REC,el=now-r.t0;if(r.fin)return;
-  if(r.wc){passAll(R2,'exp',r.w,r.h,1,true);if(lastBeat!==r.lb){if(r.lb!==undefined&&r.beats.length<5000)r.beats.push(el/1000);r.lb=lastBeat}const due=el>=r.dur?r.total:Math.min(r.total,Math.floor(el*r.fps/1000)+1);
-   if(r.n<due){if(r.pk)r.pk.pack(ec,r.w,r.h);if(due-r.n>1)r.dup=(r.dup||0)+due-r.n-1;while(r.n<due)wcEmit(r)}}
-  else if(r.frm){if(now>=r.next){passAll(R2,'exp',r.w,r.h,1,true);r.sx.fillStyle='#000';r.sx.fillRect(0,0,r.w,r.h);r.sx.drawImage(ec,0,0);
+  if(r.wc){if(lastBeat!==r.lb){if(r.lb!==undefined&&r.beats.length<5000)r.beats.push(el/1000);r.lb=lastBeat}const due=el>=r.dur-1e-6?r.total:Math.min(r.total,Math.floor(el*r.fps/1000+1e-6)+1);if(!r.off||r.n<due)passAll(R2,'exp',r.w,r.h,1,true);
+   if(r.n<due){r.sh=1;if(r.pk)r.pk.pack(ec,r.w,r.h);if(due-r.n>1)r.dup=(r.dup||0)+due-r.n-1;while(r.n<due)wcEmit(r)}}
+  else if(r.frm){if(now>=r.next){r.sh=1;passAll(R2,'exp',r.w,r.h,1,true);r.sx.fillStyle='#000';r.sx.fillRect(0,0,r.w,r.h);r.sx.drawImage(ec,0,0);
     if(r.gif){r.g.frame(r.sx.getImageData(0,0,r.w,r.h).data,Math.max(2,Math.round((r.last?now-r.last:1000/r.fps)/10)))}
     else{r.ts.push(now);r.wp.push(new Promise(res=>r.sc.toBlob(res,'image/webp',.9)))}
     r.last=now;r.next=Math.max(now,r.next)+1000/r.fps}}else passAll(R2,'exp',r.w,r.h,1,true);
-  blit();const p=Math.min(100,el/r.dur*100);setBar(p);setMsg('Rendering '+Math.round(p)+'%'+(r.wc&&r.ve.encodeQueueSize>r.fps*2?' (encoder catching up)':''));if(el>=r.dur)finishExport()}
+  if(!r.off)blit();else if(r.sh){r.sh=0;const fd=r.lw?r.wall-r.lw:0;r.lw=r.wall;r.skip=fd>1500/r.fps?Math.min(4,Math.round(fd*r.fps/1000)):1;r.nb=(r.nb||0)+1;if(r.nb%r.skip===0)blit()}// preview frames thin out only when the phone falls behind
+  const p=Math.min(100,el/r.dur*100);setBar(p);setMsg('Rendering '+Math.round(p)+'%'+(r.off?' · frame by frame':'')+(r.wc&&r.ve.encodeQueueSize>r.fps*2?' (encoder catching up)':''));if(el>=r.dur)finishExport()}
  else if(EW){const[pw,ph]=pvFit();passAll(R2,'exp',pw,ph,1,true);blit()}}
 async function finishExport(){const r=REC;if(!r||r.fin)return;r.fin=1;setMsg('Saving…');
  try{let blob,side=null;if(r.wc){setMsg('Finishing the video…');await r.ve.flush();r.ve.close();if(r.pk)r.pk.free();if(r.verr)throw r.verr;if(!r.vdesc||!r.vf.length)throw new Error('the encoder returned no video');
@@ -1892,8 +1899,8 @@ function fcpxml(o){const X=v=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;
   '<sequence format="r1" duration="'+D+'" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="'+ar+'">\n<spine>\n<asset-clip ref="r2" offset="0s" name="'+X(o.name)+'" duration="'+D+'" format="r1" tcFormat="NDF">\n'+
   conn+mk+(mk?'\n':'')+'</asset-clip>\n</spine>\n</sequence>\n</project>\n</event>\n</library>\n</fcpxml>\n'}
 function dlBlob(b,n){const a=mk('a');a.href=URL.createObjectURL(b);a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),9e3)}
-function endExport(ok,msg){REC=null;wlOff();setMsg(ok?'Export successful':'Export failed');setBar(ok?100:0);const k=EW&&EW.kill;EW=null;setTimeout(()=>{if(k)k();window.focus();setBar(0);toast(ok?'Export successful — '+msg:'Export failed — '+msg)},ok?700:0)}
-function cancelExport(m){const r=REC;REC=null;wlOff();try{if(r&&r.mr&&r.mr.state!=='inactive')r.mr.stop()}catch(e){}if(r&&r.ve)try{r.ve.close()}catch(e){}if(r&&r.pk)r.pk.free();if(r&&r.dst)try{outG.disconnect(r.dst)}catch(e){}setBar(0);toast(m)}
+function endExport(ok,msg){oexEnd(REC);REC=null;wlOff();window.KKX=0;setMsg(ok?'Export successful':'Export failed');setBar(ok?100:0);const k=EW&&EW.kill;EW=null;setTimeout(()=>{if(k)k();window.focus();setBar(0);toast(ok?'Export successful — '+msg:'Export failed — '+msg)},ok?700:0)}
+function cancelExport(m){const r=REC;oexEnd(r);REC=null;wlOff();window.KKX=0;try{if(r&&r.mr&&r.mr.state!=='inactive')r.mr.stop()}catch(e){}if(r&&r.ve)try{r.ve.close()}catch(e){}if(r&&r.pk)r.pk.free();if(r&&r.dst)try{outG.disconnect(r.dst)}catch(e){}setBar(0);toast(m)}
 // animated WebP: wrap each browser-encoded still frame (VP8/VP8L + ALPH) in ANMF chunks under VP8X + ANIM
 async function webpAnim(blobs,durs,w,h){let alpha=false;const u24=(a,o,v)=>{a[o]=v&255;a[o+1]=v>>8&255;a[o+2]=v>>16&255};
  const chunk=(id,d)=>{const n=d.length,o=new Uint8Array(8+n+(n&1));for(let i=0;i<4;i++)o[i]=id.charCodeAt(i);o[4]=n&255;o[5]=n>>8&255;o[6]=n>>16&255;o[7]=n>>>24&255;o.set(d,8);return o};
@@ -1930,7 +1937,22 @@ function stepLayer(L,i,t,dt){bind(L);const vis=!!S.lay[i].on;mediaStep(t,vis);
  if(vis){histTex.needsUpdate=true;bandTex.needsUpdate=true}if(mixT<1){mixT=Math.min(1,mixT+dt/1.1);U.uMix.value=mixT*mixT*(3-2*mixT)}
  if(S.shape==='custom'&&mixT>=1)U.uTA.value=U.uTB.value=tzOf('custom');
  kvStep(dt)}
-function frame(now){if(!REC&&(window.KK_HOLD||fcSkip(now))){requestAnimationFrame(frame);return}const t=(now-t0)/1000,dt=Math.min(.1,Math.max(0,t-tLast));tLast=t;fxT=t;FRN++;vlStep();
+const oexPos=(r,k)=>{let p=r.p0+k*r.hs;if(r.alp&&r.ale>r.als&&p>=r.ale)p=r.als+((p-r.als)%(r.ale-r.als));return Math.min(p,T.buf.duration)};
+// hold the clock while the encoder is busy or a video lane is still seeking to the next frame
+function oexHold(r){if(r.ve&&r.ve.encodeQueueSize>2)return true;const np=oexPos(r,r.k+1);
+ const w=VL.some(l=>{if(!l.v||!l.ready)return false;const rel=np-l.st;if(rel<0||rel>=vlLen(l))return false;return l.v.seeking||Math.abs(l.v.currentTime-vlVT(l,rel))>.02});if(w){const p=r.pos;r.pos=np;vlStep();r.pos=p}return w}
+// the analysers' time-domain data, taken from the track at the virtual time: the newest N samples (stereo → mono as the analyser downmixes)
+function oexTD(r,a,src,g){a.fill(0);if(!src)return;const N=a.length,sr=actx?actx.sampleRate:48000,tau=r.k*r.hs,pc=src.pcm,n=pc.length>>1,k=src.rate/sr,i0=tau*src.rate;
+ for(let j=0;j<N;j++){const i=Math.floor(i0-(N-1-j)*k);if(i>=0&&i<n)a[j]=(pc[2*i]+pc[2*i+1])*g/65536}}
+function oexStart(r){r.off=1;r.k=-1;r.p0=r.ap0;r.pos=r.p0;r.sub=VL.some(l=>l.v&&l.ready)?1:Math.max(1,Math.ceil(60/r.fps));r.hs=1/(r.fps*r.sub);r.sh=0;r.lw=0;r.skip=1;
+ r.am=sliceAB(T.buf,r,true);r.as=T.st?[0,1,2,3].map(i=>T.st[i]?sliceAB(T.st[i],r):null):null;tpause();T.on=true;VL.forEach(l=>{if(l.v&&!l.v.paused)l.v.pause()});
+ an.getFloatTimeDomainData=a=>oexTD(r,a,r.am,1);
+ SA.forEach((s,i)=>{s.a.getFloatTimeDomainData=a=>oexTD(r,a,r.as&&r.as[i],s.g.gain.value)});
+ anV.getFloatTimeDomainData=a=>{const b=new Float32Array(a.length);a.fill(0);SA.forEach(s=>{s.a.getFloatTimeDomainData(b);for(let j=0;j<a.length;j++)a[j]+=b[j]})}}
+function oexEnd(r){if(!r||!r.off||r.offd)return;r.offd=1;try{delete an.getFloatTimeDomainData;delete anV.getFloatTimeDomainData;SA.forEach(s=>delete s.a.getFloatTimeDomainData)}catch(e){}
+ T.on=false;T.pos0=r.pos;r.am=r.as=null;tLast=(performance.now()-t0)/1000;$('bPlay').textContent='Play'}
+function frame(now){if(REC&&REC.off&&!REC.fin){const r=REC,rn=now;if(oexHold(r)){requestAnimationFrame(frame);return}r.k++;now=r.t0+r.k*r.hs*1000;r.pos=oexPos(r,r.k);r.wall=rn}
+ if(!REC&&(window.KK_HOLD||fcSkip(now))){requestAnimationFrame(frame);return}const t=(now-t0)/1000,dt=Math.min(.1,Math.max(0,t-tLast));tLast=t;fxT=t;FRN++;vlStep();
  const useStems=T.st&&T.drive&&T.on&&anV;
  if(mode==='demo'){demoSignal(t);SRCA=null}else{SRCA=useStems?anV:an;SRCA.getFloatTimeDomainData(TD);for(let i=0;i<FFT;i++)wv[i]=clamp(128+TD[i]*128,0,255)}
  {const a=hexRGB(CL.ac);ACCV.set(a[0]/255,a[1]/255,a[2]/255)}
@@ -1945,7 +1967,7 @@ function frame(now){if(!REC&&(window.KK_HOLD||fcSkip(now))){requestAnimationFram
  if(EW&&EW.w&&EW.w.closed){EW=null;if(REC)cancelExport('Export window closed. Export cancelled.')}
  if(REC||EW)exportStep(now);
  syncDur();withL(LY[PG.mAudio],drawGraph);withL(LY[PG.mVars],()=>drawDNA(dt));drawAxes();drawMaskUI();if(!(RKB.fly&&(FRN&1)))uiAnim(RKB.fly?dt*2:dt);tcStep(dt);hlStep(dt);
- if(T.buf&&T.on&&!T.loop&&tpos()>=T.buf.duration-.03){tpause();T.pos0=0;if(T.kk&&!T.sil)kkEnd(true)}tlDraw();
+ if(T.buf&&T.on&&!(REC&&REC.off)&&!T.loop&&tpos()>=T.buf.duration-.03){tpause();T.pos0=0;if(T.kk&&!T.sil)kkEnd(true)}tlDraw();
  bind(LY[S.al]);requestAnimationFrame(frame)}
 // ================= layers: page boxes, visualizer layer panel, mask drawing =================
 const PGM=['mVars','mFx','mVis','mAudio'],PG={mVars:0,mFx:0,mVis:0,mAudio:0};
@@ -2137,9 +2159,9 @@ function vaStart(from){vaStop();if(!T.on||!actx)return;const lp=T.loop&&T.le>T.l
  for(const l of VL){if(!l.v||!l.ab||!l.au)continue;const len=vlLen(l),off=from-l.st;if(off>=len)continue;const o=vlVT(l,Math.max(0,off));if(o>=l.ab.duration)continue;
   const s=actx.createBufferSource();s.buffer=l.ab;s.connect(vlGain(l));if(l.lp){s.loop=true;s.loopStart=l.in;s.loopEnd=Math.min(l.out,l.ab.duration)}const at=actx.currentTime+Math.max(0,-off);s.start(at,o,l.lp?len-Math.max(0,off):Math.min(len-Math.max(0,off),l.ab.duration-o));if(lp)s.stop(actx.currentTime+Math.max(0,T.le-from));T.vs.push(s)}}
 // ---- per frame: keep each clip on the timeline clock, upload new pictures, resolve layers and keyframes ----
-function vlStep(){const on=T.on&&!!T.buf,t=T.buf?tpos():0;if(on&&VLT>=0&&t<VLT-.05)vaStart(t);VLT=on?t:-1;KT=t;
+function vlStep(){const on=T.on&&!!T.buf,t=T.buf?tpos():0,ox=!!(REC&&REC.off);if(on&&!ox&&VLT>=0&&t<VLT-.05)vaStart(t);VLT=on?t:-1;KT=t;
  for(const l of VL){const v=l.v;l.act=false;if(!v||!l.ready)continue;const len=vlLen(l),rel=t-l.st,vt=vlVT(l,rel);l.act=rel>=0&&rel<len;
-  if(l.act&&on){if(v.paused){if(Math.abs(v.currentTime-vt)>.05)v.currentTime=vt;v.play().catch(()=>{})}else{const d=v.currentTime-vt;if(Math.abs(d)>.25||(l.lp&&v.currentTime>=l.out-.02)){v.currentTime=vt;v.playbackRate=1}else v.playbackRate=clamp(1-d*1.5,.92,1.08)}}
+  if(l.act&&on&&!ox){if(v.paused){if(Math.abs(v.currentTime-vt)>.05)v.currentTime=vt;v.play().catch(()=>{})}else{const d=v.currentTime-vt;if(Math.abs(d)>.25||(l.lp&&v.currentTime>=l.out-.02)){v.currentTime=vt;v.playbackRate=1}else v.playbackRate=clamp(1-d*1.5,.92,1.08)}}
   else{if(!v.paused)v.pause();if(!v.seeking&&Math.abs(v.currentTime-vt)>.02)v.currentTime=vt}
   if(v.readyState>=2&&(v.currentTime!==l.lt||l.dirty)){l.lt=v.currentTime;l.dirty=false;if(l.cx)l.cx.drawImage(v,0,0,l.cv.width,l.cv.height);l.tex.needsUpdate=true}}
  for(let i=0;i<3;i++){VLY[i]=VL.find(l=>l.v&&l.ready&&l.route===i)||null;const o={};let n=0;for(const l of VL)if(l.route===i)for(const k in l.kf)if(l.kf[k].length){o[k]=l.kf[k];n++}KFA[i]=n?o:null}}
@@ -3081,7 +3103,7 @@ const lbStill=()=>S.ui.lbm?still():false;
 // the log bar's terminal) skips its drawing while it is off screen, folded away or covered, and the busiest moments (the big rocket) halve the
 // purely decorative ones. kkSeen(el) is true while the element is in view (an IntersectionObserver keeps it, so it costs no layout reads) ----
 const KKV=new WeakMap(),KKIO=typeof IntersectionObserver==='function'?new IntersectionObserver(es=>es.forEach(e=>KKV.set(e.target,e.isIntersecting))):null;
-function kkSeen(el){if(!el||!KKIO)return!!el;if(!KKV.has(el)){KKV.set(el,true);KKIO.observe(el)}return KKV.get(el)}
+function kkSeen(el){if(window.KKX)return false;if(!el||!KKIO)return!!el;if(!KKV.has(el)){KKV.set(el,true);KKIO.observe(el)}return KKV.get(el)}
 const LB={tx:$('status'),W:0,H:0,dpr:1,run:null,key:'',glow:0,pk:0,pct:-1,raf:0,last:0,t:0,cc:new Map(),ck:'',cols:[],tcol:''};
 {const w=mk('span'),c=mk('canvas');w.id='lbar';c.id='lbc';c.setAttribute('aria-hidden','true');LB.tx.parentNode.insertBefore(w,LB.tx);w.append(c,LB.tx);LB.el=w;LB.cv=c;LB.x=c.getContext('2d');LB.tx.setAttribute('role','status')}
 // the Re-launch button's rocket: parked, away (flying) or on its way back (see rkbHome)
@@ -3264,7 +3286,7 @@ krkUI();
 $('bKrack').onclick=krackRelease;
 // ---- splash: the logo comes in over the viewport, then fades out to the waveform. It covers the viewport's own controls; click or tap to skip ----
 {const vz=$('vz'),sp=$('splash')||mk('div'),/* the splash is already in the page's markup, so the very first frame shows it */lg=mk('div','splg'),tt=mk('div','spt'),m=getComputedStyle($('logo')),pc=CL.p1||CL.fg,ez='cubic-bezier(.65,0,.35,1)';
- sp.id='splash';sp.setAttribute('aria-hidden','true');tt.textContent='KracKill$ Vision v1.0.3';
+ sp.id='splash';sp.setAttribute('aria-hidden','true');tt.textContent='KracKill$ Vision v1.0.4';
  Object.assign(lg.style,{background:pc,webkitMaskImage:m.webkitMaskImage,maskImage:m.maskImage||m.webkitMaskImage,webkitMaskSize:'contain',maskSize:'contain',webkitMaskRepeat:'no-repeat',maskRepeat:'no-repeat',webkitMaskPosition:'center',maskPosition:'center',opacity:0});
  sp.append(lg,tt);vz.appendChild(sp);let gone=false;
  window.KK_SPL=1;/* while the splash covers the window, the visualizer doesn't render under it */
@@ -3731,7 +3753,7 @@ function clkDraw(now){const b=$('clkB'),f=$('clkF'),box=$('clk'),W=box.clientWid
  const flow=(c,L)=>{if(!L.length)return;c.lineCap='round';L.forEach(([x,y,tx,ty,a,s,dk])=>{c.fillStyle=c.strokeStyle=dk?'#050505':ink;c.globalAlpha=a*.45;c.lineWidth=s*.75;c.beginPath();c.moveTo(tx,ty);c.lineTo(x,y);c.stroke();c.globalAlpha=a;c.fillRect(x-s/2,y-s/2,s,s)});c.globalAlpha=1};
  bodies.map((p,i)=>i).sort((i,j)=>bodies[i].z-bodies[j].z).forEach(i=>{const p=bodies[i],c=p.z>0?xf:xb;flow(c,lay[i][0]);{const u=Math.min(1,Math.max(0,(p.z+.3)/.6));clkBody(c,p.px,p.py,p.r,p.col,p.ring,p.ax,p.ay,.6+.4*u*u*(3-2*u))}/* opacity eases from 60% behind to 100% in front */flow(c,lay[i][1])});
  if(!still()){clkComet(xb,W,H,now,ink);clkAlien(xb,W,H,now,cols)}}
-function clkLoop(){cancelAnimationFrame(CLK.raf);CLK.last=0;const step=now=>{CLK.raf=0;if(!CLK.vis||document.hidden)return;if(!(RKB.fly&&(CLK.fl^=1)))clkDraw(now);/* half rate while the big rocket flies */if(!still())CLK.raf=requestAnimationFrame(step)};CLK.raf=requestAnimationFrame(step)}
+function clkLoop(){cancelAnimationFrame(CLK.raf);CLK.last=0;const step=now=>{CLK.raf=0;if(!CLK.vis||document.hidden)return;if(window.KKX){CLK.raf=requestAnimationFrame(step);return}if(!(RKB.fly&&(CLK.fl^=1)))clkDraw(now);/* half rate while the big rocket flies */if(!still())CLK.raf=requestAnimationFrame(step)};CLK.raf=requestAnimationFrame(step)}
 new IntersectionObserver(es=>{CLK.vis=es.some(e=>e.isIntersecting);if(CLK.vis)clkLoop()}).observe($('mClk'));
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)clkLoop()});
 new ResizeObserver(()=>{CLK.W=0;clkDraw(performance.now());clkLoop()}).observe($('clk'));
